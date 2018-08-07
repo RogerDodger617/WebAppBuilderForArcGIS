@@ -1,0 +1,27 @@
+<div>
+    <div class="jimu-title" style="color: black">How would you like to generate a report?</div>
+    <br>
+    <br>
+    <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnEverything">All Records</div>
+    <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnSpecificRange">Range</div>
+    <br>
+    <br>
+    <div id="genReport" style="display: none">
+        <div id="dateRange" style="display: none">
+            <form id="rangeDates">
+                <label for="startDate">Start Date:</label>
+                <input id="startDate" type="date" name="startDate" class="dijit-form-DateTextBox">
+                <label for="endDate">End Date:</label>
+                <input id="endDate" type="date" name="endDate" class="dijit-form-DateTextBox" readonly>
+            </form>
+        </div>
+        <br>
+        <br>
+        <div id="btn">
+            <div class="jimu-btn" data-dojo-attach-point="btnPrint" data-dojo-attach-event="onclick:_onBtnPrintClicked">
+                Generate
+                Report
+            </div>
+        </div>
+    </div>
+</div>

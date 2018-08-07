@@ -1,0 +1,115 @@
+<div>
+    <div id="searchForm">
+        <div>
+            <input id="existAPN" type="radio" name="radiobtn" value="exist"
+                   data-dojo-attach-event="onclick:_onRadioClicked">
+            <label for="existAPN">Existing APN</label>
+            <input id="newAPN1" type="radio" name="radiobtn" value="new"
+                   data-dojo-attach-event="onclick:_onRadioClicked">
+            <label for="newAPN1">New APN</label>
+        </div>
+        <br><br>
+        <form data-dojo-type="dijit/form/Form" id="searchAPN">
+            <div>
+                <div class="jimu-title" style="color: black">Search APNs</div>
+                <br>
+                <input type="text" id="apnSearchValue" class="dijitTextBox">
+                <br><br>
+                <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnSearchClicked">Search</div>
+                <br><br>
+            </div>
+        </form>
+    </div>
+    <div id="searchResults">
+        <div id="gridTable" style="display: none">
+            <div data-dojo-attach-point="grid" id="grid" style="height: 20em"></div>
+            <br><br>
+        </div>
+        <div id="noAPN" class="jimu-panel-title" style="display: none; color: black; background-color: red"></div>
+    </div>
+    <div id="addNew" style="display: none">
+        <div>
+            <div>
+                <input id="multipleAPNs" type="radio" name="radioRangebtn" value="single"
+                       data-dojo-attach-event="onclick:_onRangeClicked">
+                <label for="multipleAPNs">Multiple APNs</label>
+                <input id="singleAPN" type="radio" name="radioRangebtn" value="range"
+                       data-dojo-attach-event="onclick:_onRangeClicked">
+                <label for="singleAPN">Single APN</label>
+                <br><br>
+            </div>
+            <form id="addNewAPN">
+                <fieldset id="part1">
+                    <legend>New APN Info:</legend>
+                    <div>
+                        <input type="text" name="fAPN" id="firstNewAPN" class="dijitTextBox" maxlength="9"
+                               data-dojo-attach-event="onchange:_onChange">
+                        <label for="firstNewAPN">First APN</label>
+                        <input type="text" name="lAPN" id="lastAPN" class="dijitTextBox" maxlength="9">
+                        <label for="lastAPN">Last APN</label>
+                    </div>
+                    <div>
+                        <input type="text" name="Parent_APN" id="parentAPN" class="dijitTextBox"
+                               style="background-color: #DEDEDE" readonly>
+                        <label for="parentAPN">Parent APN</label>
+                        <br><br>
+                    </div>
+                </fieldset>
+                <fieldset id="part2">
+                    <legend>District Tax Info:</legend>
+                    <div style="float: left; width: 50%">
+                        <div>
+                            <input list="csaName" name="csa_Name" id="csaNames" class="dijitTextBox"
+                                   data-dojo-attach-event="onchange:_onChange">
+                            <label for="csaNames">Name</label>
+                            <datalist id="csaName"></datalist>
+                        </div>
+                        <div>
+                            <select name="Elevator" id="elevator" class="dijitTextBox">
+                                <option value=""></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="elevator">Elevator</label>
+                        </div>
+                        <div>
+                            <input type="text" name="Levy" id="levy" class="dijitTextBox">
+                            <label for="levy">Levy</label>
+                        </div>
+                        <div>
+                            <input type='text' name="CSAs" class="dijitTextBox" id="districtID">
+                            <label for="districtID">District ID</label>
+                        </div>
+                        <div>
+                            <input type="text" name="MaxTax" id="maxTax" class="dijitTextBox">
+                            <label for="maxTax">Max Tax</label>
+                        </div>
+                        <div>
+                            <br><br>
+                            <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnAddDisValuesClicked">Add Values
+                            </div>
+                            <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnResetDisValuesClicked">Reset
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="gridTax">
+                            <div data-dojo-attach-point="grid" class="dgrid-div" id="taxGrid"></div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div>
+                    <br><br>
+                    <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnAddRecordClicked">Add Record(s)</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="gridFinal" style="display: none">
+        <br><br>
+        <div data-dojo-attach-point="grid" id="finalGrid"></div>
+        <br><br>
+        <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnSaveRecordsClicked">Save Record(s)</div>
+        <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnResetEverythingClicked">Reset</div>
+    </div>
+</div>

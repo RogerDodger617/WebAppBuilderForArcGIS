@@ -1,0 +1,115 @@
+<div>
+    <div id="searchRejectForm">
+        <form data-dojo-type="dijit/form/Form" id="searchRejectAPN">
+            <div>
+                <div class="jimu-title" style="color: black">Search for Reject CSA APNs</div>
+                <br>
+                <div id="searchBoxesReject">
+                    <input type="text" id="apnSearchValuerReject1" name="apnSearchValuerReject1" class="dijitTextBox">
+                </div>
+                <br><br>
+                <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnAddRejectClicked">Add Value</div>
+                <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnRemoveRejectClicked">Remove Value</div>
+                <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnSearchClickedReject">Search</div>
+                <br><br>
+            </div>
+        </form>
+    </div>
+    <div id="missingAPNRejectList" style="font-size: large; display: none"><strong><u>APN(s) NOT FOUND:</u></strong>
+        <div id="missingRejectList" style="color: white; background-color: red; font-size: medium; list-style: none"></div>
+    </div>
+    <div id="searchResultsReject">
+        <div id="gridTableReject" style="display: none">
+            <div data-dojo-attach-point="grid" id="gridReject" style="height: 20em"></div>
+            <br><br>
+        </div>
+        <div id="noAPNReject" class="jimu-panel-title" style="display: none; color: black; background-color: red"></div>
+    </div>
+    <div id="addNewReject" style="display: none">
+        <div>
+            <div>
+                <input id="multipleAPNsReject" type="radio" name="radioRangeBtnReject" value="single"
+                       data-dojo-attach-event="onclick:_onRangeRejectClicked">
+                <label for="multipleAPNsReject">Multiple APNs</label>
+                <input id="singleAPNReject" type="radio" name="radioRangeBtnReject" value="range"
+                       data-dojo-attach-event="onclick:_onRangeRejectClicked">
+                <label for="singleAPNReject">Single APN</label>
+                <br><br>
+            </div>
+            <form id="addNewAPNReject">
+                <fieldset id="part1">
+                    <legend>New APN Info:</legend>
+                    <div>
+                        <input type="text" name="fAPN" id="firstNewAPNReject" class="dijitTextBox" maxlength="9"
+                               data-dojo-attach-event="onchange:_onRejectChange">
+                        <label for="firstNewAPNReject">First APN</label>
+                        <input type="text" name="lAPN" id="lastAPNReject" class="dijitTextBox" maxlength="9">
+                        <label for="lastAPNReject">Last APN</label>
+                    </div>
+                    <div>
+                        <input type="text" name="Parent_APN" id="parentAPNUpdate" class="dijitTextBox"
+                               style="background-color: #DEDEDE; display: none" readonly>
+                        <label for="parentAPNUpdate" style="display: none">Parent APN</label>
+                        <br><br>
+                    </div>
+                </fieldset>
+                <fieldset id="part2">
+                    <legend>District Tax Info:</legend>
+                    <div style="float: left; width: 50%">
+                        <div>
+                            <input list="csaNameReject" name="csa_Name" id="csaNamesReject" class="dijitTextBox"
+                                   data-dojo-attach-event="onchange:_onRejectChange">
+                            <label for="csaNamesReject">Name</label>
+                            <datalist id="csaNameReject">
+                            </datalist>
+                        </div>
+                        <div>
+                            <select name="Elevator" id="elevatorReject" class="dijitTextBox">
+                                <option value=""></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="elevatorReject">Elevator</label>
+                        </div>
+                        <div>
+                            <input type="text" name="Levy" id="levyReject" class="dijitTextBox">
+                            <label for="levyReject">Levy</label>
+                        </div>
+                        <div>
+                            <input type='text' name="CSAs" class="dijitTextBox" id="districtIDReject">
+                            <label for="districtIDReject">District ID</label>
+                        </div>
+                        <div>
+                            <input type="text" name="MaxTax" id="maxTaxUpdateReject" class="dijitTextBox">
+                            <label for="maxTaxUpdateReject">Max Tax</label>
+                        </div>
+                        <div>
+                            <br><br>
+                            <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnAddDisRejectClicked">Add Values
+                            </div>
+                            <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnResetDisRejectClicked">Reset
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="gridTaxReject">
+                            <div data-dojo-attach-point="grid" class="dgrid-div" id="taxGridReject"></div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div>
+                    <br><br>
+                    <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnAddRejectValuesClicked">Add Record(s)</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="gridFinalReject" style="display: none">
+        <br><br>
+        <div class="jimu-title" style="color: red" id="FinalCount"></div>
+        <div data-dojo-attach-point="grid" id="finalGridReject"></div>
+        <br><br>
+        <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnSaveRejectsClicked">Save Record(s)</div>
+        <div class="jimu-btn" data-dojo-attach-event="onclick:_onBtnResetEverythingRejectClicked">Reset</div>
+    </div>
+</div>
